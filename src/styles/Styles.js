@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url('/assets/model-3.jpg');
+  background-image: ${props => `url(/assets/${props.bgImage})`};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -25,6 +25,9 @@ export const MainText = styled.div`
 export const ButtonWrapper = styled.div`
   display: flex;
   margin-bottom: 30px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const LeftButton = styled.div`
@@ -44,7 +47,9 @@ export const LeftButton = styled.div`
 `;
 
 export const RightButton = styled(LeftButton)`
-
+  background: white;
+  opacity: 0.65;
+  color: black;
 `;
 
 export const DownArrow = styled.img`

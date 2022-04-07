@@ -1,21 +1,21 @@
 import React from "react";
 import { ButtonGroup, ButtonWrapper, DownArrow, LeftButton, MainText, RightButton, Wrapper } from "../styles/Styles";
 
-const Section = () => {
+const Section = ({ title, description, backgroundImage, leftButtonText, rightButtonText }) => {
 
   return(
-    <Wrapper>
+    <Wrapper bgImage={ backgroundImage }>
       <MainText>
-        <h1>Model 3</h1>
-        <p>Order Online for Touchless Delivery</p>
+        <h1>{ title }</h1>
+        <p>{ description }</p>
       </MainText>
       <ButtonGroup>
         <ButtonWrapper>
           <LeftButton>
-            CUSTOM ORDER
+            { leftButtonText }
           </LeftButton>
           <RightButton>
-            EXISTING INVENTORY
+            { rightButtonText }
           </RightButton>
         </ButtonWrapper>
         <DownArrow src="/assets/down-arrow.svg"/>
