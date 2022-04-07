@@ -1,6 +1,8 @@
 import styled from 'styled-components';
+import { BiMenu } from "react-icons/bi";
 
-export const Container = styled.div`
+//Section CSS
+export const SectionContainer = styled.div`
   height: 100vh;
 `;
 
@@ -61,3 +63,51 @@ export const DownArrow = styled.img`
 export const ButtonGroup = styled.div`
 
 `;
+
+//Header CSS
+export const HeaderContainer = styled.div`
+  top: 0;
+  left: 0;
+  right: 0;
+  min-height: 60px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+`;
+
+export const Menu = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+
+  a {
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0 10px;
+    flex-wrap: nowrap;
+  }
+
+  @media(max-width: 968px) {
+    display: none;
+  }
+`;
+
+export const RightPanel = styled.div`
+  display: flex;
+  align-items: center;
+
+  a {
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-right: 10px;
+  }
+`;
+
+export const CustomMenu = styled(BiMenu)`
+  cursor: pointer;
+  font-size: 21px;
+`;
+

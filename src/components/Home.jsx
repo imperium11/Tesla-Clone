@@ -1,11 +1,11 @@
 import React from "react";
-import { Container } from "../styles/Styles";
+import { SectionContainer } from "../styles/Styles";
 import Section from "./Section";
 
 const Home = () => {
 
   return(
-    <Container>
+    <SectionContainer>
       <Section
         title='Model 3'
         description='Order Online for Touchless Delivery'
@@ -54,7 +54,7 @@ const Home = () => {
         backgroundImage='accessories.jpg'
         leftButtonText='Shop Now'
       />
-    </Container>
+    </SectionContainer>
   );
 
 };
