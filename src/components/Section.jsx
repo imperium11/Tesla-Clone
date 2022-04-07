@@ -6,7 +6,7 @@ const Section = () => {
   return(
     <Wrapper>
       <MainText>
-        <h1>Model S</h1>
+        <h1>Model 3</h1>
         <p>Order Online for Touchless Delivery</p>
       </MainText>
       <ButtonGroup>

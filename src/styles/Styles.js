@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url('/assets/model-s.jpg');
+  background-image: url('/assets/model-3.jpg');
   display: flex;
   flex-direction: column;
   justify-content: space-between;
