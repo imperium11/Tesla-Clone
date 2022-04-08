@@ -1,7 +1,9 @@
-import React from "react";
-import { CustomMenu, HeaderContainer, Menu, RightPanel } from "../styles/Styles";
+import React, { useState } from "react";
+import { CloseIcon, CloseWrapper, CustomMenu, HeaderContainer, Menu, RightNavigation, RightPanel } from "../styles/Styles";
 
 const Header = () => {
+
+  const [rightNav, setRightNav] = useState(false);
 
   return(
     <HeaderContainer>
@@ -19,8 +21,21 @@ const Header = () => {
       <RightPanel>
         <a href="#">Shop</a>
         <a href="#">Account</a>
-        <CustomMenu></CustomMenu>
+        <CustomMenu onClick={() => { setRightNav(true); }}></CustomMenu>
       </RightPanel>
+      <RightNavigation show={rightNav}>
+        <CloseWrapper>
+          <CloseIcon></CloseIcon>
+        </CloseWrapper>
+        <li><a href="#">Model S</a></li>
+        <li><a href="#">Model 3</a></li>
+        <li><a href="#">Model X</a></li>
+        <li><a href="#">Model Y</a></li>
+        <li><a href="#">Solar Roof</a></li>
+        <li><a href="#">Solar Panels</a></li>
+        <li><a href="#">Existing Inventory</a></li>
+        <li><a href="#">Used Inventory</a></li>
+      </RightNavigation>
     </HeaderContainer>
   );
 

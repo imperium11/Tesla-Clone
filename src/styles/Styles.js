@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BiMenu } from "react-icons/bi";
+import { BiMenu, BiX } from "react-icons/bi";
 
 //Section CSS
 export const SectionContainer = styled.div`
@@ -75,6 +75,7 @@ export const HeaderContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
+  z-index: 1;
 `;
 
 export const Menu = styled.div`
@@ -109,5 +110,43 @@ export const RightPanel = styled.div`
 export const CustomMenu = styled(BiMenu)`
   cursor: pointer;
   font-size: 21px;
+`;
+
+export const RightNavigation = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: white;
+  width: 300px;
+  z-index: 16;
+  list-style: none;
+  padding: 20px;
+
+
+  li {
+    padding: 15px 0;
+
+    a {
+      font-weight: 600;
+    }
+
+  }
+
+  transform:  ${props => props.show ? 'translateX(0)' : 'translateX(100%)'}
+`;
+
+export const CloseWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+`;
+
+export const CloseIcon = styled(BiX)`
+  cursor: pointer;
+  font-size: 23px;
 `;
 
