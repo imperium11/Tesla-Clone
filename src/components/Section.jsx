@@ -5,7 +5,7 @@ import { Fade } from "react-reveal";
 const Section = ({ title, description, backgroundImage, leftButtonText, rightButtonText }) => {
 
   return(
-    <Wrapper bgImage={ backgroundImage }>
+    <Wrapper id={title.split(' ').join('').toLowerCase()} bgImage={ backgroundImage }>
       <Fade bottom>
         <MainText>
           <h1>{ title }</h1>

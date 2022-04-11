@@ -1,9 +1,16 @@
 import React, { useState } from "react";
 import { CloseIcon, CloseWrapper, CustomMenu, HeaderContainer, Menu, RightNavigation, RightPanel } from "../styles/Styles";
+import { selectCars } from "../features/car/carSlice";
+import { useSelector } from "react-redux";
 
 const Header = () => {
 
   const [rightNav, setRightNav] = useState(false);
+  const products = useSelector(selectCars);
+
+  const hrefCreator = (string) => {
+    return `#${string.split(' ').join('').toLowerCase()}`;
+  };
 
   return(
     <HeaderContainer>
@@ -11,12 +18,9 @@ const Header = () => {
         <img src="/assets/logo.svg" alt=""/>
       </a>
       <Menu>
-        <a href="#">Model 3</a>
-        <a href="#">Model Y</a>
-        <a href="#">Model S</a>
-        <a href="#">Model X</a>
-        <a href="#">Solar Roof</a>
-        <a href="#">Solar Panels</a>
+        { products && products.map((product, index) => {
+          return <a href={hrefCreator(product)} key={index}>{product}</a>
+        }) }
       </Menu>
       <RightPanel>
         <a href="#">Shop</a>
@@ -25,16 +29,11 @@ const Header = () => {
       </RightPanel>
       <RightNavigation show={rightNav}>
         <CloseWrapper>
-          <CloseIcon></CloseIcon>
+          <CloseIcon onClick={() => { setRightNav(false); }}></CloseIcon>
         </CloseWrapper>
-        <li><a href="#">Model S</a></li>
-        <li><a href="#">Model 3</a></li>
-        <li><a href="#">Model X</a></li>
-        <li><a href="#">Model Y</a></li>
-        <li><a href="#">Solar Roof</a></li>
-        <li><a href="#">Solar Panels</a></li>
-        <li><a href="#">Existing Inventory</a></li>
-        <li><a href="#">Used Inventory</a></li>
+        { products && products.map((product, index) => {
+          return <li key={index}><a href={hrefCreator(product)}>{product}</a></li>
+        }) }
       </RightNavigation>
     </HeaderContainer>
   );

@@ -91,7 +91,7 @@ export const Menu = styled.div`
     flex-wrap: nowrap;
   }
 
-  @media(max-width: 968px) {
+  @media(max-width: 1050px) {
     display: none;
   }
 `;
@@ -125,7 +125,7 @@ export const RightNavigation = styled.div`
   z-index: 16;
   list-style: none;
   padding: 20px;
-
+  transition: transform 0.2s;
 
   li {
     padding: 15px 0;
